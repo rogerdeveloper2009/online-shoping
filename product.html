@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page | ModernShop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="roger.css">
+</head>
+<body>
+    <!-- Header (Consistent with main site) -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Modern<span>Shop</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="index.html#categories">Categories</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="icons">
+                <div class="search-box">
+                    <input type="text" placeholder="Search...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="user-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <section class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="#">Electronics</a></li>
+                <li>Wireless Headphones</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-container">
+                <!-- Product Gallery -->
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Wireless Bluetooth Headphones" id="mainImage">
+                    </div>
+                    <div class="thumbnail-container">
+                        <div class="thumbnail active" data-image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Thumbnail 1">
+                        </div>
+                        <div class="thumbnail" data-image="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80">
+                            <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80" alt="Thumbnail 2">
+                        </div>
+                        <div class="thumbnail" data-image="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1377&q=80">
+                            <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1377&q=80" alt="Thumbnail 3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <div class="product-badge">Sale</div>
+                    <h1 class="product-title">Wireless Bluetooth Headphones</h1>
+                    
+                    <div class="product-meta">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.5 (24 reviews)</span>
+                        </div>
+                        <div class="product-stock">In Stock</div>
+                    </div>
+
+                    <div class="product-price">
+                        <span class="current-price">$89.99</span>
+                        <span class="old-price">$129.99</span>
+                        <span class="discount">30% OFF</span>
+                    </div>
+
+                    <div class="product-description">
+                        <p>Premium wireless headphones with active noise cancellation. Features 30-hour battery life, touch controls, and comfortable over-ear design for extended listening sessions.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Active Noise Cancellation</li>
+                            <li><i class="fas fa-check"></i> 30-hour battery life</li>
+                            <li><i class="fas fa-check"></i> Bluetooth 5.0</li>
+                            <li><i class="fas fa-check"></i> Built-in microphone</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="btn add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                        <button class="wishlist-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <div class="product-meta-info">
+                        <div class="meta-item">
+                            <span class="meta-label">SKU:</span>
+                            <span class="meta-value">HD-2023-BLK</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Category:</span>
+                            <span class="meta-value">Electronics > Audio</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Shipping:</span>
+                            <span class="meta-value">Free shipping on orders over $50</span>
+                        </div>
+                    </div>
+
+                    <div class="share-buttons">
+                        <span>Share:</span>
+                        <a href="#" class="share-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="share-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="share-btn"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+                <div class="tab-header">
+                    <button class="tab-btn active" data-tab="description">Description</button>
+                    <button class="tab-btn" data-tab="specifications">Specifications</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews (24)</button>
+                </div>
+
+                <div class="tab-content active" id="description">
+                    <h3>Product Description</h3>
+                    <p>Immerse yourself in crystal-clear audio with our premium wireless headphones. Designed for audiophiles and casual listeners alike, these headphones deliver exceptional sound quality with deep bass and crisp highs.</p>
+                    <p>The active noise cancellation technology effectively blocks out external noise, creating a personal listening environment wherever you are. With 30 hours of battery life, you can enjoy uninterrupted music playback all day long.</p>
+                </div>
+
+                <div class="tab-content" id="specifications">
+                    <h3>Technical Specifications</h3>
+                    <table class="specs-table">
+                        <tr>
+                            <th>Brand</th>
+                            <td>SoundMaster</td>
+                        </tr>
+                        <tr>
+                            <th>Model</th>
+                            <td>WH-2023</td>
+                        </tr>
+                        <tr>
+                            <th>Connectivity</th>
+                            <td>Bluetooth 5.0</td>
+                        </tr>
+                        <tr>
+                            <th>Battery Life</th>
+                            <td>30 hours (with ANC)</td>
+                        </tr>
+                        <tr>
+                            <th>Weight</th>
+                            <td>255g</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="tab-content" id="reviews">
+                    <h3>Customer Reviews</h3>
+                    <div class="review">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah J.">
+                            </div>
+                            <div class="reviewer-meta">
+                                <h4>Sarah Johnson</h4>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="review-date">May 15, 2023</span>
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <p>These headphones are amazing! The sound quality is exceptional and the noise cancellation works perfectly on my daily commute.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Review Form -->
+                    <div class="review-form">
+                        <h3>Write a Review</h3>
+                        <form>
+                            <div class="form-group">
+                                <label>Your Rating</label>
+                                <div class="rating-stars">
+                                    <i class="far fa-star" data-rating="1"></i>
+                                    <i class="far fa-star" data-rating="2"></i>
+                                    <i class="far fa-star" data-rating="3"></i>
+                                    <i class="far fa-star" data-rating="4"></i>
+                                    <i class="far fa-star" data-rating="5"></i>
+                                    <input type="hidden" id="selected-rating" value="0">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Your Review" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Submit Review</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products">
+        <div class="container">
+            <h2 class="section-title">You May Also Like</h2>
+            <div class="product-grid">
+                <!-- Product cards would be populated here -->
+                <!-- Example product card -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1399&q=80" alt="Smart Watch">
+                    </div>
+                    <div class="product-info">
+                        <h3>Smart Watch</h3>
+                        <div class="product-price">
+                            <span class="current-price">$149.99</span>
+                        </div>
+                        <button class="btn add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Additional product cards would go here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Consistent with main site) -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Footer content would match main site -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar (Consistent with main site) -->
+    <div class="cart-sidebar">
+        <!-- Cart content would match main site -->
+    </div>
+
+    <script>
+        // Product Page JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Image gallery functionality
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const mainImage = document.getElementById('mainImage');
+            
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    document.querySelector('.thumbnail.active').classList.remove('active');
+                    this.classList.add('active');
+                    mainImage.src = this.dataset.image;
+                });
+            });
+
+            // Quantity selector
+            const minusBtn = document.querySelector('.quantity-btn.minus');
+            const plusBtn = document.querySelector('.quantity-btn.plus');
+            const quantityInput = document.querySelector('.quantity-input');
+            
+            minusBtn.addEventListener('click', () => {
+                let value = parseInt(quantityInput.value);
+                if (value > 1) quantityInput.value = value - 1;
+            });
+            
+            plusBtn.addEventListener('click', () => {
+                let value = parseInt(quantityInput.value);
+                quantityInput.value = value + 1;
+            });
+
+            // Tab functionality
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    this.classList.add('active');
+                    document.getElementById(this.dataset.tab).classList.add('active');
+                });
+            });
+
+            // Rating stars
+            const stars = document.querySelectorAll('.rating-stars i');
+            const ratingInput = document.getElementById('selected-rating');
+            
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = this.dataset.rating;
+                    ratingInput.value = rating;
+                    
+                    stars.forEach((s, index) => {
+                        if (index < rating) {
+                            s.classList.remove('far');
+                            s.classList.add('fas');
+                        } else {
+                            s.classList.remove('fas');
+                            s.classList.add('far');
+                        }
+                    });
+                });
+            });
+
+            // Add to cart functionality
+            document.querySelector('.add-to-cart').addEventListener('click', function() {
+                const quantity = parseInt(quantityInput.value);
+                const productName = document.querySelector('.product-title').textContent;
+                alert(`${quantity} ${productName} added to cart!`);
+                
+                // Update cart count
+                const cartCount = document.querySelector('.cart-count');
+                cartCount.textContent = parseInt(cartCount.textContent) + quantity;
+            });
+
+            // Wishlist button
+            document.querySelector('.wishlist-btn').addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                icon.classList.toggle('far');
+                icon.classList.toggle('fas');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Philomene Kids Shopping</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --primary-light: #FF8E8E;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --text: #2D3436;
+            --light: #F7F7F7;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Neue', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary) 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .floating-elements div {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+        
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+            z-index: 1;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid var(--accent);
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px dashed var(--primary);
+            border-radius: 30px;
+            z-index: -1;
+            opacity: 0.3;
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .login-header h1 {
+            color: var(--primary);
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+        }
+        
+        .login-header p {
+            color: var(--text);
+            font-size: 16px;
+            opacity: 0.8;
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 16px 20px 16px 50px;
+            border: 2px solid #E0E0E0;
+            background-color: var(--light);
+            border-radius: 15px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s;
+            color: var(--text);
+        }
+        
+        .input-group input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+        }
+        
+        .input-group i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+            font-size: 18px;
+        }
+        
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+        
+        .remember-me input {
+            margin-right: 8px;
+            accent-color: var(--primary);
+            width: 18px;
+            height: 18px;
+        }
+        
+        .remember-me label {
+            color: var(--text);
+        }
+        
+        .forgot-password a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        
+        .login-button {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            color: var(--white);
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(255, 107, 107, 0.4);
+        }
+        
+        .login-button:active {
+            transform: translateY(0);
+        }
+        
+        .login-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0.3) 0%,
+                rgba(255, 255, 255, 0) 60%
+            );
+            transform: rotate(30deg);
+            transition: all 0.3s;
+        }
+        
+        .login-button:hover::after {
+            left: 100%;
+        }
+        
+        .divider {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            color: #BDBDBD;
+            font-size: 14px;
+        }
+        
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #E0E0E0, transparent);
+            margin: 0 10px;
+        }
+        
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--white);
+            color: var(--text);
+            border: 2px solid #E0E0E0;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-btn.google { color: #DB4437; }
+        .social-btn.facebook { color: #4267B2; }
+        .social-btn.apple { color: #000000; }
+        
+        .signup-link {
+            text-align: center;
+            font-size: 16px;
+            color: var(--text);
+        }
+        
+        .signup-link a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+        
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+        
+        .error-message {
+            color: #D63031;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        /* Create floating elements */
+        .create-floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .floating-element {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.6;
+            animation: floatElement 15s infinite linear;
+        }
+        
+        @keyframes floatElement {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+                margin: 0 15px;
+                border-radius: 20px;
+            }
+            
+            .login-header h1 {
+                font-size: 28px;
+            }
+            
+            .login-button {
+                padding: 14px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <!-- These will be generated by JavaScript -->
+    </div>
+    
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Welcome to Philomene Kids Shopping</h1>
+            <p>Login to access your account and start shopping!</p>
+        </div>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" placeholder="Parent's Email" required>
+                <div class="error-message" id="email-error">Please enter a valid email address</div>
+            </div>
+            
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Password" required>
+                <div class="error-message" id="password-error">Password must be at least 6 characters</div>
+            </div>
+            
+            <div class="options">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <div class="forgot-password">
+                    <a href="./forgot.html">Forgot password?</a>
+                </div>
+            </div>
+            
+            <button type="submit" class="login-button">
+                <i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i> Login
+            </button>
+            
+            <div class="divider">or login with</div>
+            
+            <div class="social-login">
+                <div class="social-btn google">
+                    <i class="fab fa-google"></i>
+                </div>
+                <div class="social-btn facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="social-btn apple">
+                    <i class="fab fa-apple"></i>
+                </div>
+            </div>
+            
+            <div class="signup-link">
+                New to Philomene? <a href="./create.html">Create an account</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Create floating elements
+        const floatingContainer = document.querySelector('.floating-elements');
+        const shapes = ['circle', 'square', 'triangle', 'star', 'heart'];
+        const colors = ['#FF6B6B', '#4ECDC4', '#FFE66D', '#A5D8FF', '#C8B6FF'];
+        
+        for (let i = 0; i < 12; i++) {
+            const element = document.createElement('div');
+            const size = Math.random() * 30 + 20;
+            const duration = Math.random() * 20 + 10;
+            const delay = Math.random() * 5;
+            const shape = shapes[Math.floor(Math.random() * shapes.length)];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            element.style.width = `${size}px`;
+            element.style.height = `${size}px`;
+            element.style.backgroundColor = color;
+            element.style.left = `${Math.random() * 100}%`;
+            element.style.bottom = `-${size}px`;
+            element.style.animationDuration = `${duration}s`;
+            element.style.animationDelay = `${delay}s`;
+            
+            if (shape === 'triangle') {
+                element.style.clipPath = 'polygon(50% 0%, 0% 100%, 100% 100%)';
+                element.style.backgroundColor = 'transparent';
+                element.style.borderLeft = `${size/2}px solid transparent`;
+                element.style.borderRight = `${size/2}px solid transparent`;
+                element.style.borderBottom = `${size}px solid ${color}`;
+                element.style.width = '0';
+                element.style.height = '0';
+            } else if (shape === 'star') {
+                element.style.clipPath = 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)';
+            } else if (shape === 'heart') {
+                element.style.clipPath = 'path("M10,30 Q10,10 30,10 Q50,10 50,30 Q50,50 30,60 Q10,50 10,30")';
+                element.style.transform = 'scale(0.7)';
+            }
+            
+            floatingContainer.appendChild(element);
+        }
+        
+        // Form validation
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('remember').checked;
+            
+            // Reset error messages
+            document.getElementById('email-error').style.display = 'none';
+            document.getElementById('password-error').style.display = 'none';
+            
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('email-error').style.display = 'block';
+                return;
+            }
+            
+            // Validate password
+            if (password.length < 6) {
+                document.getElementById('password-error').style.display = 'block';
+                return;
+            }
+            
+            // If validation passes
+            console.log('Login attempt with:', { email, password, rememberMe });
+            
+            // Show success message with kid-friendly animation
+            const button = document.querySelector('.login-button');
+            button.innerHTML = '<i class="fas fa-check"></i> Welcome!';
+            button.style.background = 'linear-gradient(to right, #4ECDC4, #6BFFB8)';
+            
+            setTimeout(() => {
+                alert('Login successful! Welcome to Philomene Kids Shopping.');
+                this.reset();
+                button.innerHTML = '<i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i> Login';
+                button.style.background = 'linear-gradient(to right, var(--primary), var(--primary-light))';
+            }, 1000);
+        });
+        
+        // Add interactive effects
+        const socialBtns = document.querySelectorAll('.social-btn');
+        socialBtns.forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.1)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+        
+        const inputs = document.querySelectorAll('.input-group input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.querySelector('i').style.color = 'var(--primary-light)';
+                this.parentElement.querySelector('i').style.transform = 'translateY(-50%) scale(1.2)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.querySelector('i').style.color = 'var(--primary)';
+                this.parentElement.querySelector('i').style.transform = 'translateY(-50%) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
